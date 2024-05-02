@@ -11,6 +11,14 @@
 		CEB7648E2BE3337500F26C25 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7648D2BE3337500F26C25 /* ContentView.swift */; };
 		CEB764902BE3337600F26C25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB7648F2BE3337600F26C25 /* Assets.xcassets */; };
 		CEB764932BE3337600F26C25 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB764922BE3337600F26C25 /* Preview Assets.xcassets */; };
+		CEB7649E2BE335AB00F26C25 /* BeautyProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB7649D2BE335AB00F26C25 /* BeautyProfile.swift */; };
+		CEB764A12BE33CB500F26C25 /* SkincareVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB764A02BE33CB500F26C25 /* SkincareVM.swift */; };
+		CEB764A42BE33E2E00F26C25 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = CEB764A32BE33E2E00F26C25 /* GoogleGenerativeAI */; };
+		CEB764AA2BE34FED00F26C25 /* RemoteConfiqService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB764A92BE34FED00F26C25 /* RemoteConfiqService.swift */; };
+		CEB764AD2BE3502B00F26C25 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = CEB764AC2BE3502B00F26C25 /* FirebaseRemoteConfig */; };
+		CEB764AF2BE3502B00F26C25 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CEB764AE2BE3502B00F26C25 /* FirebaseRemoteConfigSwift */; };
+		CEB764B32BE3579300F26C25 /* Skin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB764B22BE3579300F26C25 /* Skin.swift */; };
+		CEB764B52BE368EB00F26C25 /* MirrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB764B42BE368EB00F26C25 /* MirrorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +27,11 @@
 		CEB7648D2BE3337500F26C25 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CEB7648F2BE3337600F26C25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB764922BE3337600F26C25 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEB7649D2BE335AB00F26C25 /* BeautyProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeautyProfile.swift; sourceTree = "<group>"; };
+		CEB764A02BE33CB500F26C25 /* SkincareVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareVM.swift; sourceTree = "<group>"; };
+		CEB764A92BE34FED00F26C25 /* RemoteConfiqService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfiqService.swift; sourceTree = "<group>"; };
+		CEB764B22BE3579300F26C25 /* Skin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skin.swift; sourceTree = "<group>"; };
+		CEB764B42BE368EB00F26C25 /* MirrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MirrorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB764AF2BE3502B00F26C25 /* FirebaseRemoteConfigSwift in Frameworks */,
+				CEB764A42BE33E2E00F26C25 /* GoogleGenerativeAI in Frameworks */,
+				CEB764AD2BE3502B00F26C25 /* FirebaseRemoteConfig in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,6 +53,7 @@
 			children = (
 				CEB7648A2BE3337500F26C25 /* Mirror */,
 				CEB764892BE3337500F26C25 /* Products */,
+				CEB764AB2BE3502B00F26C25 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,9 +68,12 @@
 		CEB7648A2BE3337500F26C25 /* Mirror */ = {
 			isa = PBXGroup;
 			children = (
-				CEB7648B2BE3337500F26C25 /* MirrorApp.swift */,
-				CEB7648D2BE3337500F26C25 /* ContentView.swift */,
-				CEB7648F2BE3337600F26C25 /* Assets.xcassets */,
+				CEB764A82BE34FDA00F26C25 /* Config */,
+				CEB7649F2BE33C8B00F26C25 /* ViewModel */,
+				CEB7649C2BE333C000F26C25 /* Model */,
+				CEB764992BE333A300F26C25 /* App */,
+				CEB7649A2BE333AC00F26C25 /* View */,
+				CEB7649B2BE333B300F26C25 /* Resources */,
 				CEB764912BE3337600F26C25 /* Preview Content */,
 			);
 			path = Mirror;
@@ -65,6 +85,63 @@
 				CEB764922BE3337600F26C25 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB764992BE333A300F26C25 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CEB7648B2BE3337500F26C25 /* MirrorApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CEB7649A2BE333AC00F26C25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEB7648D2BE3337500F26C25 /* ContentView.swift */,
+				CEB764B42BE368EB00F26C25 /* MirrorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEB7649B2BE333B300F26C25 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CEB7648F2BE3337600F26C25 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CEB7649C2BE333C000F26C25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEB7649D2BE335AB00F26C25 /* BeautyProfile.swift */,
+				CEB764B22BE3579300F26C25 /* Skin.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEB7649F2BE33C8B00F26C25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CEB764A02BE33CB500F26C25 /* SkincareVM.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CEB764A82BE34FDA00F26C25 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				CEB764A92BE34FED00F26C25 /* RemoteConfiqService.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		CEB764AB2BE3502B00F26C25 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +160,11 @@
 			dependencies = (
 			);
 			name = Mirror;
+			packageProductDependencies = (
+				CEB764A32BE33E2E00F26C25 /* GoogleGenerativeAI */,
+				CEB764AC2BE3502B00F26C25 /* FirebaseRemoteConfig */,
+				CEB764AE2BE3502B00F26C25 /* FirebaseRemoteConfigSwift */,
+			);
 			productName = Mirror;
 			productReference = CEB764882BE3337500F26C25 /* Mirror.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +193,10 @@
 				Base,
 			);
 			mainGroup = CEB7647F2BE3337500F26C25;
+			packageReferences = (
+				CEB764A22BE33E2E00F26C25 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+				CEB764A72BE34FBA00F26C25 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CEB764892BE3337500F26C25 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB7648E2BE3337500F26C25 /* ContentView.swift in Sources */,
+				CEB764B32BE3579300F26C25 /* Skin.swift in Sources */,
+				CEB764AA2BE34FED00F26C25 /* RemoteConfiqService.swift in Sources */,
 				CEB7648C2BE3337500F26C25 /* MirrorApp.swift in Sources */,
+				CEB764A12BE33CB500F26C25 /* SkincareVM.swift in Sources */,
+				CEB7649E2BE335AB00F26C25 /* BeautyProfile.swift in Sources */,
+				CEB764B52BE368EB00F26C25 /* MirrorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +433,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CEB764A22BE33E2E00F26C25 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google-gemini/generative-ai-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.1;
+			};
+		};
+		CEB764A72BE34FBA00F26C25 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.25.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CEB764A32BE33E2E00F26C25 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB764A22BE33E2E00F26C25 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+		CEB764AC2BE3502B00F26C25 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB764A72BE34FBA00F26C25 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		CEB764AE2BE3502B00F26C25 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CEB764A72BE34FBA00F26C25 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CEB764802BE3337500F26C25 /* Project object */;
 }
