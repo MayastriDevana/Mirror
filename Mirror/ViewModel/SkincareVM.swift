@@ -17,7 +17,7 @@ class SkincareVM: ObservableObject {
     @Published var errorMessage: String?
     @Published var skin: [Skin] = []
     @Published var isReady: Bool = false
-   
+    
     private var timer: Timer?
     
     init() {
@@ -27,19 +27,17 @@ class SkincareVM: ObservableObject {
     func generateSkincare(){
         Task{
             do{
-                guard let apiKey: String = try await RemoteConfigService.shared.fetchConfig(forKey: .apiKey) else {
-                    print("API Key not found")
-                    return
-                }
+                let apiKey: String = try await RemoteConfigService.shared.fetchConfig(forKey: .apiKey)
                 self.geminiModel = GenerativeModel(name: "gemini-pro", apiKey: apiKey)
                 self.isReady = true
             }catch{
                 print("Error configuring GenerativeModel: \(error)")
+                
             }
         }
     }
     
-    func Recomendation(skinType: SkinTypes, skinConcern: SkinConcerns) async{
+    func Recomendation(skinType: SkinTypes, skinConcern: SkinConcerns) async {
         let skinTypeString = skinType.rawValue
         let skinConcernString = skinConcern.rawValue
         let prompt = "berikan rekomendasi skincare untuk jenis kulit \(skinTypeString) dengan kondisi kulit \(skinConcernString), maksimal 100 kata."
@@ -55,13 +53,13 @@ class SkincareVM: ObservableObject {
                 return
             }
             
-            guard let text = response.text, let data = text.data(using: .utf8) else {
+            guard let text = response.text, let _ = text.data(using: .utf8) else {
                 print("Unable to extract text or convert to data")
                 return
             }
             
-            let skins = try JSONDecoder().decode([Skin].self, from: data)
-            self.skin = skins
+            self.skincareText = text
+            
         }catch{
             print("Error fetching places: \(error.localizedDescription)")
         }
