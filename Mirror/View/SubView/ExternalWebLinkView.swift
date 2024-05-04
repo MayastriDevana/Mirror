@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct ExternalWebLinkView: View {
+    let mirrors: MirrorModel
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        GroupBox {
+            HStack {
+                Image(systemName: "globe")
+                    .foregroundStyle(.blue)
+                
+                Text("Sociolla")
+                
+                Spacer()
+                
+                Group {
+                    let destination = URL(string: mirrors.link)
+                    let sociolla = URL(string: mirrors.link)!
+                                       
+                    Image(systemName: "arrow.up.right.square")
+                        .foregroundStyle(.blue)
+                    Link(mirrors.name, destination: (destination ?? sociolla ))
+                        .foregroundStyle(.black)
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    ExternalWebLinkView()
+    let mirrors : [MirrorModel] = Bundle.main.decode("skin.json")
+    return ExternalWebLinkView(mirrors: mirrors[3])
 }

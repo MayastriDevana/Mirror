@@ -8,5 +8,17 @@
 import Foundation
 
 struct Constant {
-    static let apiKey = "AIzaSyAJx0_-l23QbvAOyc0EYCSM7N6gBGMSavQ"
+//    static let cityString = City.Palembang.rawValue
+    static let prompt = """
+    give me recomendation of cosmetic store in the city of Jakarta. Provide the response as an array of JSON as
+    {
+        [
+            "place": "name",
+            "location": "Address",
+        ]
+    }
+    
+    only. Remove any backticks.
+    
+    """
 }

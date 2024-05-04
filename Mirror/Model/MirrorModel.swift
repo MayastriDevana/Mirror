@@ -14,6 +14,7 @@ struct MirrorModel: Codable, Identifiable {
     let question: String
     let link: String
     let image: String
+    let imageprod: String
     let header: String
     let fact: String
     let caution: String

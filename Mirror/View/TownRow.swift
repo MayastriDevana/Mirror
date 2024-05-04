@@ -7,12 +7,26 @@
 
 import SwiftUI
 
-struct TownRowView: View {
+struct TownRow: View {
+    var town: Town
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 16){
+            Text(town.place)
+                .font(.system(.title2, design: .rounded))
+            HStack{
+                Group{
+                    Image(systemName: "pin")
+                    Text(town.location)
+                }
+                .font(.subheadline)
+                Spacer()
+                
+            }
+        }
+        .padding()
     }
 }
 
 #Preview {
-    TownRowView()
+    TownRow(town: Town.dummyData[0])
 }

@@ -12,15 +12,20 @@ struct DescMirrorView: View {
     
     var body: some View {
         ScrollView(showsIndicators: false){
+            Text(mirror.name)
+                .padding(.top, 36)
+            
             Image(mirror.image)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
                 .padding(.horizontal)
+                .padding(.top, 24)
+                
             
             Text(mirror.description)
                 .font(.headline)
-                .padding(.top, 36)
+                .padding(.top, 24)
                 .padding(.vertical)
                 .padding(.horizontal)
                 .fontWeight(.light)
@@ -32,22 +37,33 @@ struct DescMirrorView: View {
                 .fontWeight(.light)
             
             HStack{
-                Button{
-                    
-                }label: {
-                    Text("Yes")
+                NavigationLink(destination: DetailMirrorView(mirrors: mirror)){
+                    Text("Yes ")
+                        .fontWeight(.bold)
+                        .font(.callout)
+                        .padding()
+                        .background(Color.lightpink)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                        .foregroundColor(.white)
+                        .padding()
                 }
                 
-                Button{
-                    
-                }label: {
-                    Text("No")
+                NavigationLink(destination: MirrorView()){
+                    Text("No  ")
+                        .fontWeight(.bold)
+                        .font(.callout)
+                        .padding()
+                        .background(Color.lightpink)
+                        .clipShape(RoundedRectangle(cornerRadius: 30))
+                        .foregroundColor(.white)
+                        .padding()
                 }
+                
             }
-                
+            
         }
         .padding()
-        .navigationTitle(mirror.name)
+//        .navigationTitle(mirror.name)
         .navigationBarTitleDisplayMode(.inline)
     }
 }

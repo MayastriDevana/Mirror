@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct Town: Codable, Hashable{
+    var place: String
+    var location: String
+}
+
+extension Town{
+    static let dummyData: [Town] = [
+        Town(
+            place: "Palembang",
+            location: "Lorok Pajko"
+        )
+    ]
+}
+
